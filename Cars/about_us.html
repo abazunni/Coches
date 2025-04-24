@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Classic Cars Hub</title>
+    <link rel="stylesheet" href="/Cars/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <section id="about">
+        <header>
+            <nav>
+                <img src="img/car-logo.png" class="logo" alt="Car Logo">
+                <div class="hamburger" aria-label="Toggle menu">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="menu">
+                    <a href="index.html">Home</a>
+                    <a href="listings.html">Cars</a>
+                    <a href="services.html">Services</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="about_us.html">About</a>
+                </div>
+            </nav>
+        </header>
+    <main><br><br><br><br><br><br><br><br>
+        <section>
+            <h2>Our Mission</h2>
+            <p style="color: white;">
+                At Classic Cars Hub, we are passionate about breathing new life into timeless classics. 
+                Whether you're looking to buy a vintage gem, sell a beloved old car, or restore a classic to its former glory, we are here to help.
+            </p>
+        </section>
+        <section>
+            <h2>Who We Are</h2>
+            <p style="color: white;">
+                With decades of experience in the automotive industry, our team of experts specializes in the restoration, buying, and selling of old cars. 
+                We believe every car has a story to tell, and it’s our goal to preserve those stories for generations to come.
+            </p>
+        </section>
+        <section>
+            <h2 style="color: white;">What We Do</h2>
+            <ul>
+                <li style="color: white;"><strong>Buy:</strong> Fair and hassle-free valuation for your old or classic car.</li>
+                <li style="color: white;"><strong>Sell:</strong> A curated selection of vintage and classic vehicles for sale.</li>
+                <li style="color: white;"><strong>Repair & Restore:</strong> Comprehensive repair and restoration services to bring your classic car back to life.</li>
+            </ul>
+        </section>
+        <section>
+            <h2 style="color: white;">Why Choose Us?</h2>
+            <p style="color: white;">
+                We take pride in offering personalized service, expert craftsmanship, and a deep appreciation for classic automobiles. 
+                When you choose Classic Cars Hub, you're choosing quality, trust, and a shared love for timeless vehicles.
+            </p>
+        </section>
+    </main>
+    <script>
+        // Background change for the hero section
+        let heroBg = document.querySelector('.hero');
+
+        setInterval(() => {
+            heroBg.style.backgroundImage = "url(img/bg-light.jpg)";
+            setTimeout(() => {
+                heroBg.style.backgroundImage = "url(img/bg.jpg)";
+            }, 1000);
+        }, 2200);
+
+        // Toggle the navigation menu for mobile devices
+        const hamburger = document.querySelector('.hamburger');
+        const menu = document.querySelector('.menu');
+
+        hamburger.addEventListener('click', () => {
+            menu.classList.toggle('show');
+        });
+
+        // Toggle Menu
+        document.addEventListener("DOMContentLoaded", () => {
+            const hamburger = document.querySelector(".hamburger");
+            const menu = document.querySelector(".menu");
+
+            hamburger.addEventListener("click", () => {
+                menu.classList.toggle("active");
+                hamburger.classList.toggle("open");
+            });
+        });
+
+
+    </script>
+</body>
+</html>
