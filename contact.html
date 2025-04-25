@@ -4,58 +4,71 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cars</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <title>Contact Us - Classic Cars Hub</title>
+    <link rel="stylesheet" href="/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
 </head>
 <body>
-        <section id="contact">
-            <header>
-                <nav>
-                    <img src="img/car-logo.png" class="logo" alt="Car Logo">
-                    <div class="hamburger" aria-label="Toggle menu">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                    <div class="menu">
-                        <a href="index.html">Home</a>
-                        <a href="listings.html">Cars</a>
-                        <a href="services.html">Services</a>
-                        <a href="contact.html">Contact</a>
-                        <a href="about_us.html">About</a>
-                    </div>
-                </nav>
-            </header><br><br><br><br><br>><br><br><br>
+    <!-- Skip to main content link for keyboard users -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <section id="contact">
+        <header role="banner">
+            <nav role="navigation" aria-label="Main navigation">
+                <img src="img/car-logo.png" class="logo" alt="Car Logo">
+                <div class="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="main-menu">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="menu" id="main-menu">
+                    <a href="index.html">Home</a>
+                    <a href="listings.html">Cars</a>
+                    <a href="services.html">Services</a>
+                    <a href="contact.html" aria-current="page">Contact</a>
+                    <a href="about_us.html">About</a>
+                </div>
+            </nav>
+        </header>
+        <main id="main-content" role="main"><br><br><br><br><br><br><br><br>
             <h2>Contact Us</h2>
-            <p style="color: white;">Have questions? Reach out to us, and we'll be happy to help!</p><br>
+            <p>Have questions? Reach out to us, and we'll be happy to help!</p><br>
     
             <!-- Contact Form -->
-            <form action="#" method="post" id="contact-form">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required />
-    
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required />
-    
-                <label for="phone">Phone:</label>
-                <input type="tel" id="phone" name="phone" />
-    
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
-    
+            <form action="#" method="post" id="contact-form" aria-labelledby="form-heading">
+                <h3 id="form-heading" class="sr-only">Contact Form</h3>
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required aria-required="true" />
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required aria-required="true" />
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone:</label>
+                    <input type="tel" id="phone" name="phone" />
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" required aria-required="true"></textarea>
+                </div>
+
                 <button type="submit">Send Message</button>
             </form><br>
     
             <!-- Contact Details -->
-            <div id="contact-details">
-                <h3>Our Location</h3>
+            <div id="contact-details" aria-labelledby="location-heading">
+                <h3 id="location-heading">Our Location</h3>
                 <p><strong>Address:</strong> 123 Classic Car Blvd, Retro City, RC 45678</p>
-                <p><strong>Phone:</strong> (123) 456-7890</p>
-                <p><strong>Email:</strong> info@classiccardealership.com</p>
+                <p><strong>Phone:</strong> <a href="tel:+11234567890">(123) 456-7890</a></p>
+                <p><strong>Email:</strong> <a href="mailto:info@classiccardealership.com">info@classiccardealership.com</a></p>
             </div>
-        </section>
+        </main>
 
         <script>
             // Background change for the hero section
@@ -74,6 +87,7 @@
     
             hamburger.addEventListener('click', () => {
                 menu.classList.toggle('show');
+                hamburger.setAttribute('aria-expanded', menu.classList.contains('show'));
             });
     
             // Toggle Menu
@@ -84,10 +98,10 @@
                 hamburger.addEventListener("click", () => {
                     menu.classList.toggle("active");
                     hamburger.classList.toggle("open");
+                    hamburger.setAttribute('aria-expanded', menu.classList.contains('active'));
                 });
             });
-    
-    
         </script>
+    </section>
 </body>
 </html>

@@ -4,20 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Classic Cars Hub</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <nav>
-            <img src="./img/car-logo.png" class="logo" alt="Car Logo">
-            <div class="hamburger" aria-label="Toggle menu">
+    <!-- Skip to main content link for keyboard users -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <header role="banner">
+        <nav role="navigation" aria-label="Main navigation">
+            <img src="img/car-logo.png" class="logo" alt="Car Logo">
+            <div class="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="main-menu">
                 <div></div>
                 <div></div>
                 <div></div>
             </div>
-            <div class="menu">
-                <a href="index.html">Home</a>
+            <div class="menu" id="main-menu">
+                <a href="index.html" aria-current="page">Home</a>
                 <a href="listings.html">Cars</a>
                 <a href="services.html">Services</a>
                 <a href="contact.html">Contact</a>
@@ -26,14 +29,16 @@
         </nav>
     </header>
 
-    <div class="hero">
-        <div class="text">
-            <h4>Welcome to Classic Cars Hub</h4>
-            <h1>Your trusted destination</h1>
-            <p>Buying, Selling, and Repairing Classic Cars</p>
-            <a href="listings.html" class="btn">Explore Cars</a>
+    <main id="main-content" role="main">
+        <div class="hero">
+            <div class="text">
+                <h1>Welcome to <span>Classic Cars Hub</span></h1>
+                <h2>Your trusted destination</h2>
+                <p>Buying, Selling, and Repairing Classic Cars</p>
+                <a href="listings.html" class="btn">Explore Cars</a>
+            </div>
         </div>
-    </div>
+    </main>
 
     <script>
         // Background change for the hero section
@@ -51,6 +56,7 @@
         hamburger.addEventListener('click', () => {
             menu.classList.toggle('show');
             hamburger.classList.toggle('open');
+            hamburger.setAttribute('aria-expanded', menu.classList.contains('show'));
         });
     </script>
 </body>
